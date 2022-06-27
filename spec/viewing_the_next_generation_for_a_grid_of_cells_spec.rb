@@ -53,6 +53,9 @@ describe 'a 4x4 grid with no cells' do
   end
 
   def next_conway_generation(grid)
-    grid
+    grid.map do |row|
+      row.map do |cell|
+      end
+    end
   end
 end
