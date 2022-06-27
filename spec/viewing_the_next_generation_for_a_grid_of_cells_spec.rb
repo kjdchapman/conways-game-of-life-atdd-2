@@ -27,6 +27,31 @@ describe 'a 4x4 grid with no cells' do
     end
   end
 
+  describe 'oscillators' do
+    describe 'blinker (length 3)' do
+      it 'should rotate 90 degrees every generation' do
+        blinker = [
+          [:dead, :dead, :dead, :dead, :dead],
+          [:dead, :dead, :live, :dead, :dead],
+          [:dead, :dead, :live, :dead, :dead],
+          [:dead, :dead, :live, :dead, :dead],
+          [:dead, :dead, :dead, :dead, :dead]
+        ]
+
+        horizontal_line = [
+          [:dead, :dead, :dead, :dead, :dead],
+          [:dead, :dead, :dead, :dead, :dead],
+          [:dead, :live, :live, :live, :dead],
+          [:dead, :dead, :dead, :dead, :dead],
+          [:dead, :dead, :dead, :dead, :dead],
+
+        ]
+
+        expect(next_conway_generation(blinker)).to eq(horizontal_line)
+      end
+    end
+  end
+
   def next_conway_generation(grid)
     grid
   end
